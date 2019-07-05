@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Movies</title>
+    </h:head>
+    <h:body>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <ul>
+            <li><h:link value = "Home" outcome = "index" /></li>
+            <li><h:link value = "Find Theater" outcome = "findTheater" /></li>
+        </ul>
+        <div class="body"> 
+            <h1> Dallas Cinema</h1>
+            <h:form> 
+                <h:outputText value='Search for a movie'/> <br/>
+                <h:commandButton value="Search" action="#{theaterManagedBean.getAll}"></h:commandButton>
+            </h:form>
+            
+            <h1> Currently playing near you </h1>
+            
+            <h:form> 
+                <ui:repeat value="#{movieManagedBean.getAll()}" var="movie" >
+                    <h:column>
+                        <h:graphicImage library="images" name="movie#{movie.movieId}.jpg" width="300"/>
+                    </h:column>
+                </ui:repeat>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+
