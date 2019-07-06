@@ -9,12 +9,29 @@
     <h:body class="body">
         <h:outputStylesheet library="css" name="style.css"/>
         <ul>
+            <li><h:graphicImage library="images" name="headerlogo.png" width="70"/> </li>
             <li><h:link value = "Home" outcome = "index" /></li>
             <li><h:link value = "Find Theater" outcome = "findTheater" /></li>
         </ul>
-        <h:form>
-            <h:outputText value="#{movieManagedBean.selectedMovie.title}"></h:outputText>
-            <h:outputText value="#{movieManagedBean.selectedMovie.movieDescription}"></h:outputText>
+        <h:form id="myTR2">
+            <h1>
+                <h:outputText value="#{movieManagedBean.selectedMovie.title}"></h:outputText>
+            </h1>
+            <h:graphicImage library="images" name="movie#{movieManagedBean.selectedMovie.movieId}.jpg" width="200"/>
+            <h:dataTable value="#{movieManagedBean.selectedMovie}" var="movie">
+            <h:column>
+            <h:outputText value="#{movie.movieDescription}"></h:outputText>
+            </h:column>
+            <h:column>
+                <h:outputText value="#{movie.genre}"></h:outputText>
+            </h:column>
+            <h:column>
+                <h:outputText value="#{movie.duration}"></h:outputText>
+            </h:column>
+            <h:column>
+                <h:outputText value="#{movie.rating}"></h:outputText>
+            </h:column>
+            </h:dataTable>
             <h:commandButton value="Purchase" action="checkout"></h:commandButton>
         </h:form>
     </h:body>

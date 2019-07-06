@@ -1,40 +1,42 @@
+
 body {
-  background-color: black;
-  text-align: center;
+    background-color: #2d70b4;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
-  color: white;
-}
-
-
-
-input:hover {
-  background-color: white;
-  color: black;
-  border: 2px solid #555555;
+    color: white;
 }
 
 input[type=text] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 
 input[type=button], input[type=submit], input[type=reset]{
-  background-color: #555555; 
-  border: 2px solid #555555;
-  border-radius: 12px;
-  color: white;
-  padding: 16px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+    background-color: #27609a; 
+    border: 2px solid #205081;
+    border-radius: 12px;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+    background-color: #205081;
+    color: white;
+    border: 2px solid #205081;
 }
 
 form {
-  color: white;
+    color: white;
 }
 
 table {
@@ -43,25 +45,62 @@ table {
     align-items: center;
 }
 
+tr {
+    text-align: left;
+}
+
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+    list-style-type: none;
+    margin: 0 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #27609a;
 }
 
 li {
-  float: left;
+    float: left;
 }
 
 li a {
-  display: block;
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
+    display: block;
+    color: white;
+    padding: 20px 30px;
+    text-decoration: none;
 }
 
 li a:hover {
-  background-color: #111;
+    background-color: #205081;
+}
+
+#myTR {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  vertical-align: auto;
+}
+
+#myTR td {
+  margin-top: -1px;
+  background-color: #27609a; 
+  padding: 12px;
+  font-size: 18px; 
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+#myTR2 {
+  list-style-type: none;
+  padding: 0;
+  vertical-align: auto;
+}
+
+#myTR2 td {
+  margin-top: -1px;
+  background-color: #27609a; 
+  padding: 4px;
+  font-size: 18px; 
+  display: block;
+  margin: auto;
+  width: 70%;
 }

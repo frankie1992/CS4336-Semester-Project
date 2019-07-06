@@ -9,35 +9,33 @@
     <h:body class="body">
         <h:outputStylesheet library="css" name="style.css"/>
         <ul>
+            <li><h:graphicImage library="images" name="headerlogo.png" width="70"/> </li>
             <li><h:link value = "Home" outcome = "index" /></li>
             <li><h:link value = "Find Theater" outcome = "findTheater" /></li>
         </ul>
-        <h:form>
+        <h:form id="myTR">
+            <h1>
             <h:outputText value="#{theaterManagedBean.selectedTheater.theaterName}"></h:outputText>
-            
+            </h1>
             <h:dataTable value="#{movieManagedBean.allTheaterMovies}" var="movie" >
                 <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Title"/>
-                    </f:facet> 
+                    <h:graphicImage library="images" name="movie#{movie.movieId}.jpg" width="200"/>
+                </h:column>
+                
+                <h:column>
                     <h:outputText value="#{movie.title}"/>
                 </h:column>
 
                 <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Description"/>
-                    </f:facet>
                     <h:outputText value="#{movie.movieDescription}"/>
                 </h:column>
 
                 <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Select"/>
-                    </f:facet>
                     <h:commandButton value="Select" action="#{movieManagedBean.searchID()}">
                         <f:setPropertyActionListener target="#{movieManagedBean.movieId}" value="#{movie.movieId}" />
                     </h:commandButton>
                 </h:column>
+                
             </h:dataTable>
             
         </h:form>

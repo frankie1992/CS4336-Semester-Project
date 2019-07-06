@@ -1,17 +1,37 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
-        <title>Thank you page</title>
+        <title>Thank you</title>
     </h:head>
     <h:body class="body">
         <h:outputStylesheet library="css" name="style.css"/>
         <ul>
+            <li><h:graphicImage library="images" name="headerlogo.png" width="70"/> </li>
             <li><h:link value = "Home" outcome = "index" /></li>
             <li><h:link value = "Find Theater" outcome = "findTheater" /></li>
         </ul>
-        <h1>Thank you for your purchase. </h1>
+        <h1>Thank you for your purchase. Your confirmation has been emailed to you.</h1>
+        <h1>Confirmation# 9483928593.</h1>
+        <h:form>
+            <h:panelGrid columns="1">
+                <h:outputText value='Purchase Details'/>
+
+                <h:outputText value='Selected Movie'/>
+
+                <h:outputText value='Rating'/>
+            
+                <h:outputText value='Date'/>
+
+                <h:outputText value='Location in middle'/>
+
+                <h:outputText value='Total cost'/>
+                
+            </h:panelGrid>
+        </h:form>
+        
     </h:body>
 </html>
 
