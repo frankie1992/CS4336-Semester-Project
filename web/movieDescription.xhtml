@@ -1,39 +1,44 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
         <title>Movie Description</title>
     </h:head>
     <h:body class="body">
         <h:outputStylesheet library="css" name="style.css"/>
-        <ul>
-            <li><h:graphicImage library="images" name="headerlogo.png" width="70"/> </li>
-            <li><h:link value = "Home" outcome = "index" /></li>
-            <li><h:link value = "Find Theater" outcome = "findTheater" /></li>
-        </ul>
-        <h:form id="myTR2">
-            <h1>
-                <h:outputText value="#{movieManagedBean.selectedMovie.title}"></h:outputText>
-            </h1>
-            <h:graphicImage library="images" name="movie#{movieManagedBean.selectedMovie.movieId}.jpg" width="200"/>
-            <h:dataTable value="#{movieManagedBean.selectedMovie}" var="movie">
-            <h:column>
-            <h:outputText value="#{movie.movieDescription}"></h:outputText>
-            </h:column>
-            <h:column>
-                <h:outputText value="#{movie.genre}"></h:outputText>
-            </h:column>
-            <h:column>
-                <h:outputText value="#{movie.duration}"></h:outputText>
-            </h:column>
-            <h:column>
-                <h:outputText value="#{movie.rating}"></h:outputText>
-            </h:column>
-            </h:dataTable>
-            <h:commandButton value="Purchase" action="checkout"></h:commandButton>
-        </h:form>
+        <div>
+            <header>
+                <ul>
+                    <li><h:graphicImage library="images" name="headerlogo.png" width="70"/> </li>
+                    <li><h:link value = "Home" outcome = "index" /></li>
+                    <li><h:link value = "Find Theater" outcome = "findTheater" /></li>
+                </ul>
+            </header>
+            <div style="width: 90%; margin: auto; background-color: #2d70b4">
+                <h:form id="myTR2">
+                    <h1>
+                        <h:outputText value="#{movieManagedBean.selectedMovie.title}"></h:outputText>
+                    </h1>
+                    <h:graphicImage library="images" name="movie#{movieManagedBean.selectedMovie.movieId}.jpg" width="200"/>
+                    <h:dataTable value="#{movieManagedBean.selectedMovie}" var="movie">
+                        <h:column>
+                            <h:outputText value="#{movie.movieDescription}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <h:outputText value="#{movie.genre}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <h:outputText value="#{movie.duration}"></h:outputText>
+                        </h:column>
+                        <h:column>
+                            <h:outputText value="#{movie.rating}"></h:outputText>
+                        </h:column>
+                    </h:dataTable>
+                    <h:commandButton value="Purchase" action="checkout"></h:commandButton>
+                </h:form>
+            </div>
+        </div>
     </h:body>
 </html>
 

@@ -8,30 +8,36 @@
     </h:head>
     <h:body class="body">
         <h:outputStylesheet library="css" name="style.css"/>
-        <ul>
-            <li><h:graphicImage library="images" name="headerlogo.png" width="70"/> </li>
-            <li><h:link value = "Home" outcome = "index" /></li>
-            <li><h:link value = "Find Theater" outcome = "findTheater" /></li>
-        </ul>
-        <h1>Thank you for your purchase. Your confirmation has been emailed to you.</h1>
-        <h1>Confirmation# 9483928593.</h1>
-        <h:form>
-            <h:panelGrid columns="1">
-                <h:outputText value='Purchase Details'/>
+        <div>
+            <header>
+                <ul>
+                    <li><h:graphicImage library="images" name="headerlogo.png" width="70"/> </li>
+                    <li><h:link value = "Home" outcome = "index" /></li>
+                    <li><h:link value = "Find Theater" outcome = "findTheater" /></li>
+                </ul>
+            </header>
 
-                <h:outputText value='Selected Movie'/>
+            <div style="width: 90%; margin: auto; background-color: #2d70b4">
+                <h1>Thank you for your purchase. Your confirmation has been emailed to you.</h1>
+                <h1>Confirmation# 9483928593.</h1>
+                <h:form>
+                    <h:panelGrid columns="1">
+                        <h:outputText value='Purchase Details'/>
 
-                <h:outputText value='Rating'/>
-            
-                <h:outputText value='Date'/>
+                        <h:outputText value='Selected Movie'/>
 
-                <h:outputText value='Location in middle'/>
+                        <h:outputText value='Rating'/>
 
-                <h:outputText value='Total cost'/>
-                
-            </h:panelGrid>
-        </h:form>
-        
+                        <h:outputText value='Date'/>
+
+                        <h:outputText value='Location in middle'/>
+
+                        <h:outputText value='Total cost'/>
+
+                    </h:panelGrid>
+                </h:form>
+            </div>
+        </div>
     </h:body>
 </html>
 
