@@ -17,7 +17,7 @@
                 </ul>
             </header>
 
-            <div style="width: 90%; margin: auto; background-color: #2d70b4">
+            <div style="width: 85%; margin: auto; background-color: black; height: 100%;">
                 <h:form id="myTR">
                     <h1>
                         <h:outputText value="#{theaterManagedBean.selectedTheater.theaterName}"></h:outputText>
@@ -28,9 +28,12 @@
                         </h:column>
 
                         <h:column>
+                            <h1>
                             <h:outputText value="#{movie.title}"/>
+                            </h1>
+                            <br/>
                             <h:outputText value="#{movie.movieDescription}"/>
-
+                            <br/>
                             <h:commandButton value="Select" action="#{movieManagedBean.searchID()}">
                                 <f:setPropertyActionListener target="#{movieManagedBean.movieId}" value="#{movie.movieId}" />
                             </h:commandButton>

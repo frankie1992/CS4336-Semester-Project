@@ -8,7 +8,7 @@
     </h:head>
     <h:body class="body">
         <h:outputStylesheet library="css" name="style.css"/>
-        <div>
+        <div style="height: 100%;">
             <header>
                 <ul>
                     <li><h:graphicImage library="images" name="headerlogo.png" width="70"/> </li>
@@ -17,21 +17,21 @@
                 </ul>
             </header>
 
-            <div style="width: 90%; margin: auto; background-color: #2d70b4">
+            <div style="width: 85%; margin: auto; background-color: black; height: 100%;">
                 <h:form>
                     <h:panelGrid columns="1">
 
                         <h:outputText value='How Many tickets?'/>
-                        <h:inputText value='0'/>
+                        <h:inputText value='#{purchaseManagedBean.tickets}'/>
 
                         <h:outputText value='First Name'/>
-                        <h:inputText/>
+                        <h:inputText value='#{purchaseManagedBean.firstName}'/>
 
                         <h:outputText value='Last Name'/>
-                        <h:inputText/>
+                        <h:inputText value='#{purchaseManagedBean.lastName}'/>
 
                         <h:outputText value='Email'/>
-                        <h:inputText/>
+                        <h:inputText value='#{purchaseManagedBean.email}'/>
 
                         <h:panelGrid columns="4" style="margin-left: 0">
                             <h:outputText value='Credit Card Number'/>
@@ -40,8 +40,8 @@
                             <h:graphicImage library="images" name="discover.png" width="40"/>
                         </h:panelGrid>
 
-                        <h:inputText/>
-
+                        <h:inputText value='#{purchaseManagedBean.CCnum}' validator="#{purchaseManagedBean.validateCC}" id="ccvalid"/>
+                        <h:message for="ccvalid" style="color: red;"/>
                         <h:panelGrid columns="4">
                             <h:outputText value='Expiration date'/>
                             <h:selectOneMenu value="0">
@@ -77,8 +77,13 @@
                             </h:panelGrid>
                         </h:panelGrid>
                         <h:outputText value='Billing zip code'/>
-                        <h:inputText/>
+                        <h:inputText value='#{purchaseManagedBean.zip}' validator="#{purchaseManagedBean.validateZip}" id="zipvalid"/>
+                        <h:message for="zipvalid" style="color: red;"/>
+                        
+                        <h:panelGrid columns="2" style="margin-left: 0">
                         <h:commandButton action="thankYouPage" value="Purchase"/>
+                        <h:commandButton action="movieDescription" value="Go Back" immediate="true"/>
+                        </h:panelGrid>
                     </h:panelGrid>
                 </h:form>
             </div>
