@@ -24,13 +24,15 @@
                     <h:panelGrid columns="1">
                         <h:outputText value='Purchase Details'/>
 
-                        <h:outputText value='Selected Movie'/>
+                        <h:outputText value='#{movieManagedBean.selectedMovie.title}'/>
 
-                        <h:outputText value='Rating'/>
+                        <h:outputText value='#{movieManagedBean.selectedMovie.rating}'/>
 
-                        <h:outputText value='Date'/>
-
-                        <h:outputText value='Location in middle'/>
+                        <h:outputText value='#{purchaseManagedBean.date}'/>
+                        
+                        <h:outputText value='Showtime: #{purchaseManagedBean.time}'/>
+                        
+                        <h:outputText value='#{theaterManagedBean.selectedTheater.theaterName}'/>
 
                         <h:outputText value='Total cost'/>
 

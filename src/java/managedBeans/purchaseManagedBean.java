@@ -26,6 +26,9 @@ public class purchaseManagedBean implements Serializable{
     private String email;
     private String CCnum;
     private String zip;
+    private String date;
+    private String time;
+    private String total;
     
     public purchaseManagedBean() {
     }
@@ -77,6 +80,22 @@ public class purchaseManagedBean implements Serializable{
     public void setZip(String zip) {
         this.zip = zip;
     }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
     
     public void validateCC(FacesContext context, UIComponent comp, Object value) {
 
@@ -104,9 +123,5 @@ public class purchaseManagedBean implements Serializable{
             context.addMessage(comp.getClientId(context), message);
 
         }
-    }
-    
-    public int totalCost(int tickets){
-        return tickets * 10;
     }
 }
