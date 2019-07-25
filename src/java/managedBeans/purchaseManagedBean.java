@@ -28,16 +28,17 @@ public class purchaseManagedBean implements Serializable{
     private String zip;
     private String date;
     private String time;
-    private String total;
+    private int total;
     
     public purchaseManagedBean() {
     }
-
+    
     public int getTickets() {
         return tickets;
     }
 
     public void setTickets(int tickets) {
+        total = tickets * 10;
         this.tickets = tickets;
     }
 
@@ -96,6 +97,15 @@ public class purchaseManagedBean implements Serializable{
     public void setTime(String time) {
         this.time = time;
     }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+    
     
     public void validateCC(FacesContext context, UIComponent comp, Object value) {
 

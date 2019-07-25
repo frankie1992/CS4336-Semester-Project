@@ -20,7 +20,9 @@
             <div style="width: 85%; margin: auto; background-color: black; height: 100%;">
                 <h:form>
                     <h:panelGrid columns="1">
-
+                        
+                        <h:outputText value='Total cost: #{purchaseManagedBean.total}$'/>
+                        <br/>
                         <h:outputText value='First Name'/>
                         <h:inputText value='#{purchaseManagedBean.firstName}'/>
 

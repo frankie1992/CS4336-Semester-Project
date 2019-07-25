@@ -23,18 +23,41 @@
                 <h:form>
                     <h:panelGrid columns="1">
                         <h:outputText value='Purchase Details'/>
-
-                        <h:outputText value='#{movieManagedBean.selectedMovie.title}'/>
-
-                        <h:outputText value='#{movieManagedBean.selectedMovie.rating}'/>
-
-                        <h:outputText value='#{purchaseManagedBean.date}'/>
                         
-                        <h:outputText value='Showtime: #{purchaseManagedBean.time}'/>
+                        <h:panelGroup>
+                            <h:outputText value='Movie Title: '/>
+                            <h:outputText value='#{movieManagedBean.selectedMovie.title}'/>
+                        </h:panelGroup>
+                           
+                        <h:panelGroup>
+                            <h:outputText value='Movie Rating: '/>
+                            <h:outputText value='#{movieManagedBean.selectedMovie.rating}'/>
+                        </h:panelGroup>
                         
-                        <h:outputText value='#{theaterManagedBean.selectedTheater.theaterName}'/>
-
-                        <h:outputText value='Total cost'/>
+                        <h:panelGroup>
+                            <h:outputText value='Movie Date: '/>
+                            <h:outputText value='#{purchaseManagedBean.date}'/>
+                        </h:panelGroup>
+                        
+                        <h:panelGroup>
+                            <h:outputText value='Show time: '/>
+                            <h:outputText value='#{purchaseManagedBean.time}'/>
+                        </h:panelGroup>
+                        
+                        <h:panelGroup>
+                            <h:outputText value='Location: '/>
+                            <h:outputText value='#{theaterManagedBean.selectedTheater.theaterName}'/>
+                        </h:panelGroup>
+                        
+                        <h:panelGroup>
+                            <h:outputText value='Ammount of tickets '/>
+                            <h:outputText value='#{purchaseManagedBean.tickets}'/>
+                        </h:panelGroup>
+                        
+                        <h:panelGroup>
+                            <h:outputText value='Total: '/>
+                            <h:outputText value='#{purchaseManagedBean.total}$'/>
+                        </h:panelGroup>
 
                     </h:panelGrid>
                 </h:form>

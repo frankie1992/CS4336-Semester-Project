@@ -22,7 +22,7 @@
                         <h:outputText value="#{movieManagedBean.selectedMovie.title}"></h:outputText>
                     </h1>
                     <h:graphicImage library="images" name="movie#{movieManagedBean.selectedMovie.movieId}.jpg" width="200"/>
-                    <h:dataTable value="#{movieManagedBean.selectedMovie}" var="movie">
+                    <h:dataTable value="#{movieManagedBean.selectedMovie}" var="movie" >
                         <h:column>
                             <h:outputText value="Description: #{movie.movieDescription}"></h:outputText>
                         </h:column>
@@ -36,46 +36,55 @@
                             <h:outputText value="Rating: #{movie.rating}"></h:outputText>
                         </h:column>
                     </h:dataTable>
-                    <h:outputText value="How many tickets?"></h:outputText>
-                    <h:selectOneMenu value="#{purchaseManagedBean.tickets}">
-                        <f:selectItem itemValue="1" itemLabel="1" />
-                        <f:selectItem itemValue="2" itemLabel="2" />
-                        <f:selectItem itemValue="3" itemLabel="3" />
-                        <f:selectItem itemValue="4" itemLabel="4" />
-                        <f:selectItem itemValue="5" itemLabel="5" />
-                        <f:selectItem itemValue="6" itemLabel="6" />
-                        <f:selectItem itemValue="7" itemLabel="7" />
-                        <f:selectItem itemValue="8" itemLabel="8" />
-                        <f:selectItem itemValue="9" itemLabel="9" />
-                    </h:selectOneMenu>
-                    <br/>
-                    <h:outputText value='Date'/>
-                    <h:selectOneMenu value="#{purchaseManagedBean.date}">
-                        <f:selectItem itemValue="day1" itemLabel="Friday 13" />
-                        <f:selectItem itemValue="day2" itemLabel="Saturday 14" />
-                        <f:selectItem itemValue="day3" itemLabel="Sunday 15" />
-                        <f:selectItem itemValue="day4" itemLabel="Monday 16" />
-                        <f:selectItem itemValue="day5" itemLabel="Tuesday 17" />
-                        <f:selectItem itemValue="day6" itemLabel="Wednsday 18" />
-                        <f:selectItem itemValue="day7" itemLabel="Thursday 19" />
-                    </h:selectOneMenu>
-
-                    <br/>
-                    <h:outputText value="Time"></h:outputText>
-                    <h:selectOneMenu value="#{purchaseManagedBean.time}">
-                        <f:selectItem itemValue="time1" itemLabel="5 PM" />
-                        <f:selectItem itemValue="time2" itemLabel="6 PM" />
-                        <f:selectItem itemValue="time3" itemLabel="7 PM" />
-                        <f:selectItem itemValue="time4" itemLabel="8 PM" />
-                        <f:selectItem itemValue="time5" itemLabel="9 PM" />
-                        <f:selectItem itemValue="time6" itemLabel="10 PM" />
-                        <f:selectItem itemValue="time7" itemLabel="11 PM" />
-                    </h:selectOneMenu>
-                    <br/>
-                    <h:outputText value="total cost"></h:outputText>
-                    <h:outputText value="10"></h:outputText>
-                    <br/>
-                    <h:commandButton value="Purchase" action="checkout"></h:commandButton>
+                    
+                    <h:panelGrid columns="1" style="width: 40%; background-color: #660000;">
+                        
+                        <h:panelGroup>
+                            <h:outputText value="How many tickets?  "></h:outputText>
+                            <h:selectOneMenu value="#{purchaseManagedBean.tickets}">
+                                <f:selectItem itemValue="1" itemLabel="1" />
+                                <f:selectItem itemValue="2" itemLabel="2" />
+                                <f:selectItem itemValue="3" itemLabel="3" />
+                                <f:selectItem itemValue="4" itemLabel="4" />
+                                <f:selectItem itemValue="5" itemLabel="5" />
+                                <f:selectItem itemValue="6" itemLabel="6" />
+                                <f:selectItem itemValue="7" itemLabel="7" />
+                                <f:selectItem itemValue="8" itemLabel="8" />
+                                <f:selectItem itemValue="9" itemLabel="9" />
+                            </h:selectOneMenu>
+                        </h:panelGroup>
+                        
+                        <h:panelGroup>
+                            <h:outputText value='Date  '/>
+                            <h:selectOneMenu value="#{purchaseManagedBean.date}">
+                                <f:selectItem itemValue="Friday 13" itemLabel="Friday 13" />
+                                <f:selectItem itemValue="Saturday 14" itemLabel="Saturday 14" />
+                                <f:selectItem itemValue="Sunday 15" itemLabel="Sunday 15" />
+                                <f:selectItem itemValue="Monday 16" itemLabel="Monday 16" />
+                                <f:selectItem itemValue="Tuesday 17" itemLabel="Tuesday 17" />
+                                <f:selectItem itemValue="Wednsday 18" itemLabel="Wednsday 18" />
+                                <f:selectItem itemValue="Thursday 19" itemLabel="Thursday 19" />
+                            </h:selectOneMenu>
+                        </h:panelGroup>
+                        
+                        <h:panelGroup>
+                            <h:outputText value="Time  "></h:outputText>
+                            <h:selectOneMenu value="#{purchaseManagedBean.time}">
+                                <f:selectItem itemValue="5:00PM" itemLabel="5 PM" />
+                                <f:selectItem itemValue="6:00PM" itemLabel="6 PM" />
+                                <f:selectItem itemValue="7:00PM" itemLabel="7 PM" />
+                                <f:selectItem itemValue="8:00PM" itemLabel="8 PM" />
+                                <f:selectItem itemValue="9:00PM" itemLabel="9 PM" />
+                                <f:selectItem itemValue="10:00PM" itemLabel="10 PM" />
+                                <f:selectItem itemValue="11:00PM" itemLabel="11 PM" />
+                            </h:selectOneMenu>
+                        </h:panelGroup>
+                        
+                        <h:panelGroup>
+                            <h:commandButton action="movieTheater" value="Go Back" immediate="true"/>
+                            <h:commandButton value="Purchase" action="checkout"></h:commandButton>
+                        </h:panelGroup>
+                    </h:panelGrid>
                 </h:form>
             </div>
         </div>
