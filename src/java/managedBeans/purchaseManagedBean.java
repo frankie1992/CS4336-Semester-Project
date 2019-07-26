@@ -36,7 +36,7 @@ public class purchaseManagedBean implements Serializable{
     public int getTickets() {
         return tickets;
     }
-
+    //when ammount of tickets are set, it also sets the price
     public void setTickets(int tickets) {
         total = tickets * 10;
         this.tickets = tickets;
@@ -106,7 +106,7 @@ public class purchaseManagedBean implements Serializable{
         this.total = total;
     }
     
-    
+    //Credit card validator must be length of 16 characters
     public void validateCC(FacesContext context, UIComponent comp, Object value) {
 
         String cc = (String) value;
@@ -120,7 +120,7 @@ public class purchaseManagedBean implements Serializable{
 
         }
     }
-    
+    //Zip cide validator must be length of 5 characters
     public void validateZip(FacesContext context, UIComponent comp, Object value) {
 
         String cc = (String) value;

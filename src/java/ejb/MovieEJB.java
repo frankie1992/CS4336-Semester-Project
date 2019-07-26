@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ejb;
 
 import javax.ejb.Stateless;
@@ -19,15 +14,15 @@ public class MovieEJB {
 
     @PersistenceContext
     private EntityManager em;
-    
+    //gets all movies
     public List<Movie> getAll(){
         return em.createNamedQuery("Movie.getAll", Movie.class).getResultList();
     }
-    
+    //gets all movies at a theater
     public List<Movie> getAllTheaterMovies(Long id){
         return em.createNamedQuery("Movie.getTheaterMovies", Movie.class).setParameter("id", id).getResultList();
     }
-    
+    //Gets a movie by id
     public Movie searchByID(Long id){
         return em.createNamedQuery("Movie.searchByID", Movie.class).setParameter("id", id).getSingleResult();
     }

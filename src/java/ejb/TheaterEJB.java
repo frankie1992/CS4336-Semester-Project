@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ejb;
 
 
@@ -20,15 +15,15 @@ public class TheaterEJB {
 
     @PersistenceContext
     private EntityManager em;
-    
+    //Gets all theaters
     public List<Theater> getAllTheater(){
         return em.createNamedQuery("Theater.getAll", Theater.class).getResultList();
     }
-    
+    //Get theaters by zip code
     public List<Theater> searchByZip(String zip){
         return em.createNamedQuery("Theater.searchByZip", Theater.class).setParameter("zip", zip).getResultList();
     }
-    
+    //Gte theater by ID
     public Theater searchByID(Long id){
         return em.createNamedQuery("Theater.searchByID", Theater.class).setParameter("id", id).getSingleResult();
     }
